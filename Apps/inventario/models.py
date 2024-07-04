@@ -52,3 +52,13 @@ class Reporte(models.Model):
     fecha_inicio = models.DateField()
     fecha_fin = models.DateField()
     total = models.FloatField()
+
+class ReporteVentas(Reporte):
+    ventas = models.ManyToManyField(Venta)
+    total_ventas = models.FloatField()
+
+
+class ReporteCompras(Reporte):
+    ventas = models.ManyToManyField(Compra)
+    total_ventas = models.FloatField()
+
